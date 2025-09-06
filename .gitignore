@@ -32,3 +32,4 @@ dist-ssr
 .vscode/
 
 src/common/prompts
+debughelper/*
