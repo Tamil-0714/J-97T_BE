@@ -1,4 +1,3 @@
-import { bool } from "envalid";
 import { z } from "zod";
 export const WebHistorySchema = z.object({
   email: z.email(),
