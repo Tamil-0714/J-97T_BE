@@ -3,7 +3,6 @@ import { StatusCodes } from "http-status-codes";
 import { ZodError, type ZodSchema } from "zod";
 import { ServiceResponse } from "../models/serviceResponse.js";
 
-// import { ServiceResponse } from "@/common/models/serviceResponse";
 
 export const handleServiceResponse = (serviceResponse: ServiceResponse<any>, response: Response): void => {
   response.status(serviceResponse.statusCode).send(serviceResponse);
