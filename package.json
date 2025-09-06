@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tsx watch --clear-screen=false",
     "dev": "tsx watch --clear-screen=false src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
