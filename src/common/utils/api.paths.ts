@@ -3,7 +3,8 @@ export const API_PATHS = {
     WEB_HISTORY: {
         BASE: "/web-history",
         ROUTES: {
-            CREATE:"/"
+            CREATE:"/",
+            FILTER_HISTORY: "/filter"
         }
     }
 }

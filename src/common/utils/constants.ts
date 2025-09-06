@@ -1,0 +1,1 @@
+export const WEB_HISTORY_FILTER_LIMIT = 100
