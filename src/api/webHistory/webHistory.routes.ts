@@ -5,22 +5,22 @@ import { asyncHandler } from "@/common/middlewares/asyncHandler";
 import { validateRequest } from "@/common/utils/httpHandlers";
 import { CreateWebHistorySchema, GetWebHistoryByFiltersSchema } from "./webHistory.schema";
 import { authenticateRequest } from "@/common/middlewares/authenticationHandler";
+export const WEB_HISTORY_BASE_PATH = API_PATHS.WEB_HISTORY.BASE
+export const WEB_HISTORY_ROUTE_PATHS = {
+    CREATE_WEB_HISTORY : WEB_HISTORY_BASE_PATH + API_PATHS.WEB_HISTORY.ROUTES.CREATE,
+    FILTER_WEB_HISTORY : WEB_HISTORY_BASE_PATH + API_PATHS.WEB_HISTORY.ROUTES.FILTER_HISTORY,
+}
 export function createWebHistoryRouter():Router {
     const router = Router();
-    const BASE_PATH = API_PATHS.WEB_HISTORY.BASE
-    const ROUTE_PATHS = {
-        CREATE_WEB_HISTORY : BASE_PATH + API_PATHS.WEB_HISTORY.ROUTES.CREATE,
-        FILTER_WEB_HISTORY : BASE_PATH + API_PATHS.WEB_HISTORY.ROUTES.FILTER_HISTORY,
-    }
 
     router.post(
-        ROUTE_PATHS.CREATE_WEB_HISTORY,
+        WEB_HISTORY_ROUTE_PATHS.CREATE_WEB_HISTORY,
         validateRequest(CreateWebHistorySchema),
         authenticateRequest,
         asyncHandler(webHistoryController.createWebHistory)
     )
     router.post(
-        ROUTE_PATHS.FILTER_WEB_HISTORY,
+        WEB_HISTORY_ROUTE_PATHS.FILTER_WEB_HISTORY,
         validateRequest(GetWebHistoryByFiltersSchema),
         authenticateRequest,
         asyncHandler(webHistoryController.getWebHistoryByFilters)
